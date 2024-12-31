@@ -1,11 +1,18 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const UserButtons = () => {
+  const cartInfo = useContext(CartContext);
+
   return (
     <div>
-      <button className="px-2 relative">
+      <button
+        className="px-2 relative"
+        onClick={() => cartInfo.setIsCartOpen(true)}
+      >
         <FontAwesomeIcon icon={faBagShopping} />
         <div
           id="cart-amount"
