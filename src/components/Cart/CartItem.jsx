@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { catalogIndexedById } from "../../utils/catalog";
 
-const CartItem = () => {
+const CartItem = ({ id, amount }) => {
+  const { brand, price, name, image } = catalogIndexedById[id];
   return (
     <article className="flex bg-stone-100 p-1 border rounded-mg relative">
       <img src="" alt="" className="h-24" />
@@ -16,7 +18,7 @@ const CartItem = () => {
           <button className="border border-slate-400 hover:border-slate-900 mb-2">
             <FontAwesomeIcon icon={faMinus} className="p-1" />
           </button>
-          <p className="p-2 w-8 mx-auto">2</p>
+          <p className="p-2 w-8 mx-auto">{amount}</p>
           <button className="border border-slate-400 hover:border-slate-900 mb-2">
             <FontAwesomeIcon icon={faPlus} className="p-1" />
           </button>
