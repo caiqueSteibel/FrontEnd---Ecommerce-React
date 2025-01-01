@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import CartItem from "./CartItem";
-import { CartContext } from "../../contexts/CartContext";
+import { useContext } from 'react';
+import CartItem from './CartItem';
+import { CartContext } from '../../contexts/CartContext';
 
 const CartProducts = () => {
   const { cartItems } = useContext(CartContext);
@@ -10,7 +10,7 @@ const CartProducts = () => {
   }
 
   return (
-    <section className="flex flex-col justify-start overflow-auto gap-2">
+    <section className="flex flex-col justify-start overflow-auto gap-2 h-3/5">
       {cartItemsArray.map((product) => {
         return <CartItem {...product} key={`key_${product.id}`} />;
       })}
