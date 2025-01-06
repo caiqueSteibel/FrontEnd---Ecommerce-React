@@ -1,4 +1,4 @@
-const ProductFilters = () => {
+const ProductFilters = ({ setSearchParams }) => {
   return (
     <section className="flex justify-center items-center py-8">
       <input
@@ -6,6 +6,7 @@ const ProductFilters = () => {
         type="radio"
         name="filter-selection"
         className="hidden"
+        onClick={() => setSearchParams({})}
       />
       <label
         htmlFor="filter-0"
@@ -18,6 +19,7 @@ const ProductFilters = () => {
         type="radio"
         name="filter-selection"
         className="hidden"
+        onClick={() => setSearchParams({ filterby: "masc" })}
       />
       <label
         htmlFor="filter-1"
@@ -30,6 +32,7 @@ const ProductFilters = () => {
         type="radio"
         name="filter-selection"
         className="hidden"
+        onClick={() => setSearchParams({ filterby: "fem" })}
       />
       <label
         htmlFor="filter-2"

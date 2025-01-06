@@ -1,18 +1,17 @@
-import { useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CartProducts from './CartProducts';
-import TotalPriceCell from './TotalPriceCell';
-import { Link } from 'react-router-dom';
+import { useCartContext } from "../../contexts/CartContext";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CartProducts from "./CartProducts";
+import TotalPriceCell from "./TotalPriceCell";
+import { Link } from "react-router-dom";
 
 const CartOverlay = () => {
-  const { toggleIsCartOpen, isCartOpen } = useContext(CartContext);
+  const { toggleIsCartOpen, isCartOpen } = useCartContext();
 
   return (
     <div
       className={`h-screen w-screen fixed top-0 left-0 flex justify-end z-50 ease-in-out duration-200 ${
-        isCartOpen ? 'translate-x-0' : 'translate-x-full'
+        isCartOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
       <section

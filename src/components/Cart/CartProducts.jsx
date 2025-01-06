@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import CartItem from './CartItem';
-import { CartContext } from '../../contexts/CartContext';
+import CartItem from "./CartItem";
+import { useCartContext } from "../../contexts/CartContext";
 
 const CartProducts = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCartContext();
   const cartItemsArray = [];
   for (const itemId in cartItems) {
     cartItemsArray.push({ id: Number(itemId), amount: cartItems[itemId] });
